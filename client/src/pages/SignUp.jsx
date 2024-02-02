@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function SignUp() {
 
-  const[formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({})
   const [errorMessage, setErrorMessage] = useState(null)
   const [successMessage, setSuccessMessage] = useState(null)
   const [loading, setLoading] = useState(false);
@@ -82,7 +82,7 @@ export default function SignUp() {
           </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span>Have an account?</span>
-            <Link to="/signin" className='text-blue-500'>Sign In</Link>
+            <Link to="/sign-in" className='text-blue-500'>Sign In</Link>
           </div>
           {
             errorMessage && (
