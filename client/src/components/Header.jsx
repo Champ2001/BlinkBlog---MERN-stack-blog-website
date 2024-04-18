@@ -49,38 +49,33 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2">
+    <Navbar className="border-b-2 sticky top-0 z-50 bg-white">
       <Link
         to="/"
-        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
+        className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white "
       >
         <span className="px-2 py-1 bg-gradient-to-r from-blue-200 via-blue-600 to-blue-950 rounded-lg text-white">
           Campus
         </span>
         Hub
       </Link>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} onClick={handleSubmit} >
         <TextInput
           type="text"
           placeholder="Search..."
           rightIcon={AiOutlineSearch}
-          className="hidden lg:inline"
+          className="hidden lg:inline "
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
-      <Button className="w-12 h-10 lg:hidden" color="gray" pill>
+      <Button className="w-12 h-10" color="gray" pill onClick={() => dispatch(toggleTheme())}>
+        {theme === "light" ? <FaSun /> : <FaMoon />}
+      </Button>
+      <Button className="w-12 h-10 lg:hidden cursor-pointer" color="gray" pill onClick={handleSubmit}>
         <AiOutlineSearch />
       </Button>
       <div className="flex gap-2 md:order-2">
-        <Button
-          className="w-12 h-10 hidden sm:inline"
-          color="gray"
-          pill
-          onClick={() => dispatch(toggleTheme())}
-        >
-          {theme === "light" ? <FaSun /> : <FaMoon />}
-        </Button>
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
@@ -117,9 +112,6 @@ export default function Header() {
         <Navbar.Link active={path === "/about"} as={"div"}>
           <Link to="/about">About</Link>
         </Navbar.Link>
-        {/* <Navbar.Link active={path === "/projects"} as={"div"}>
-          <Link to="/projects">Projects</Link>
-        </Navbar.Link> */}
       </Navbar.Collapse>
     </Navbar>
   );

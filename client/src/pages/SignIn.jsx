@@ -48,14 +48,13 @@ export default function SignIn() {
         {/* left */}
         <div className='flex-1'>
           <Link to='/' className='font-bold dark:text-white text-4xl'>
-            <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white'>
-              Sahand's
+            <span className='px-2 py-1  bg-gradient-to-r from-blue-200 via-blue-600 to-blue-950 rounded-lg text-white'>
+              Campus 
             </span>
-            Blog
+            Hub
           </Link>
           <p className='text-sm mt-5'>
-            This is a demo project. You can sign in with your email and password
-            or with Google.
+          In today’s digital age, university students face significant challenges in terms of community resources and campus life. This study supports CampusHub, which aims to address these issues. CampusHub seamlessly integrates in-store assessment with community-driven problem solving techniques, providing comprehensive solutions to improve the student experience.
           </p>
         </div>
         {/* right */}
